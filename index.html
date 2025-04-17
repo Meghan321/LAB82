@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>D3 Example 1- Core SVG Elements</title>
+    <!-- You will load the D3 library here. -->
+       <script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <!-- Page elements and content go here. -->
+    <svg width="320" height="360">
+        <rect x="30" width="40" height="80" fill="blue"></rect>
+        <rect x="75" width="40" height="40" fill="green"></rect>
+        <rect x="120" width="40" height="140" fill="red"></rect>
+        <rect x="165" width="40" height="80" fill="orange"></rect>
+    </svg>
+    
+
+    <script>
+    // Our D3 code will go here. 
+                var popData = [ 40, 80, 120, 100 ]; // Array with graph data
+        
+    
+    // Width and height of SVG
+    var w = 400;
+    var h = 450;
+
+    //Create SVG element
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);    
+
+        d3.selectAll( "rect" ) // select all rectangle elements
+        
+            .data( popData )
+            .attr( "height", function(d){ // assign the data to the attribute height
+                return d;
+            });
+    </script>
+
+</body>
+
+</html>
